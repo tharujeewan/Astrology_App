@@ -3,6 +3,7 @@
 import 'package:astro_app/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:astro_app/utils/app_colors.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class _SignupPageState extends State<SignupPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: PrimaryColor,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -78,7 +79,7 @@ class _SignupPageState extends State<SignupPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 50), // Added space above 'Full Name'
+                    SizedBox(height: 50),
                     Text('Full Name',
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold)),

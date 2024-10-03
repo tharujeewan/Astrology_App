@@ -30,6 +30,8 @@ flutter:
     - assets/images/Profile.png
     - assets/images/Eclipse.png
     - assets/images/User.png
+    - assets/images/VerificationCode.png
+    - assets/images/PasswordReset.png
 
   # Fonts can be added here if needed
   # fonts:

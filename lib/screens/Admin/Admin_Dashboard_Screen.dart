@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:astro_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 

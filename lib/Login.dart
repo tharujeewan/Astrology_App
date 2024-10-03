@@ -1,9 +1,10 @@
-// login_page.dart
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_const_constructors
 
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'package:astro_app/screens/Bottom_navigationbar_Screen.dart';
+import 'package:astro_app/screens/Profile/OTPResetScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:astro_app/utils/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -109,8 +110,22 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Expanded(
                   child: Text(
-                    'I agree to the Terms and Conditions',
+                    'Remember me',
                     style: TextStyle(fontSize: 14),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OTPResetScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(fontSize: 14, color: PrimaryColor),
                   ),
                 ),
               ],
@@ -122,17 +137,24 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   if (_formKeyLogin.currentState?.validate() ?? false) {
                     if (_isAgreeTermsLogin) {
-                      // Handle login action
+                      // If validation is successful and terms are agreed, navigate to the next screen
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavigationBarScreen(),
+                        ),
+                      );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                            content: Text('You must agree with the terms')),
+                          content: Text('You must agree with the terms'),
+                        ),
                       );
                     }
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: PrimaryColor,
                   foregroundColor: Colors.black,
                 ),
                 child: Text(
@@ -144,7 +166,6 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 20,
             ),
-            // Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
